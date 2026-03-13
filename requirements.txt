@@ -1,0 +1,15 @@
+numpy>=1.26.4
+pandas>=2.2.2
+scikit-learn>=1.5.0
+imbalanced-learn>=0.12.3
+xgboost>=2.0.3
+lightgbm>=4.3.0
+shap>=0.45.0
+fastapi>=0.111.0
+uvicorn[standard]>=0.29.0
+pydantic>=2.7.0
+slowapi>=0.1.9
+python-multipart>=0.0.9
+scipy>=1.13.0
+python-dotenv>=1.0.1
+httpx>=0.27.0
