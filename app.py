@@ -170,18 +170,18 @@ st.markdown("""
 #  MODEL LOADING
 # ─────────────────────────────────────────────
 
-@st.cache_resource(show_spinner="Loading DiabéticaAI model…")
+@st.cache_resource(show_spinner="Training DiabéticaAI model — please wait ~60 seconds…")
 def load_model():
-    # Must import pipeline classes BEFORE pickle.load so it can reconstruct them
     from ml.pipeline import (
         ClinicalPreprocessor, EnsembleTrainer, ExplainabilityEngine,
-        RiskStratifier, ModelRegistry, DataLoader
+        RiskStratifier, ModelRegistry, DataLoader, build_and_train_pipeline
     )
 
     model_path = Path("models/diabetica_v1.0.0.pkl")
     if not model_path.exists():
-        st.error("❌ Model file not found at `models/diabetica_v1.0.0.pkl`.\n\nPlease run `python ml/pipeline.py` first.")
-        st.stop()
+        st.info("⏳ No model found — training now on synthetic data. This takes about 60 seconds...")
+        build_and_train_pipeline()
+
     with open(model_path, "rb") as f:
         return pickle.load(f)
 
