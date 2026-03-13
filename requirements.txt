@@ -13,5 +13,6 @@ python-multipart
 scipy
 python-dotenv
 httpx
-streamlit
+streamlit==1.55.0
 plotly
+altair>=4.0,<5
