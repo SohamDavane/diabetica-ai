@@ -5,7 +5,6 @@ Then open `.gitignore` in VS Code and paste this:
 ```
 venv/
 __pycache__/
-*.pkl
 *.pyc
 logs/
 monitoring/reports/
